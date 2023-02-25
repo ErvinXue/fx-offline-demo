@@ -6,7 +6,7 @@ from datetime import datetime
 
 from email.policy import default
 from flask_mongoengine import Document
-
+from flask_jwt_extended import current_user
 from mongoengine import (
     StringField,
     ReferenceField,
@@ -15,7 +15,6 @@ from mongoengine import (
     BooleanField,
     FloatField,
 )
-
 
 
 class Order(Document):
@@ -40,6 +39,10 @@ class Order(Document):
                 "id": str(self.course.id),
                 "name": self.course.name,
                 "uni_course_code": self.course.uni_course_code,
+            },
+            "campus": {
+                "id": str(self.course.campus.id),
+                "name": self.course.campus.name
             },
             "created_time": self.created_time.isoformat(),
             "original_price": self.original_price,

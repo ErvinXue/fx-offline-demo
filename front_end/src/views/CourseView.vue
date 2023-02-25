@@ -76,7 +76,7 @@ watchEffect(async () => {
     <n-card v-if="isPurchased === false">
       <n-space vertical align="center">
         <n-h3>This course isn't in your ordered list</n-h3>
-        <n-p>You can order it in the order tab</n-p>
+        <n-p>You can get access after purchased</n-p>
 
       </n-space>
     </n-card>

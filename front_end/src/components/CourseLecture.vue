@@ -5,7 +5,6 @@ import {
   NThing,
   NTag,
   NSpace,
-  NAvatar,
   NIcon,
   NDescriptions,
   NDescriptionsItem,

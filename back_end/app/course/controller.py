@@ -62,7 +62,7 @@ class LectureListApi(Resource):
 
         if current_user._cls == "User.Student":
             if current_user not in course.enrolled_students:
-                return {"message": "You are not allowed to access this course"}, 403
+                return {"message": "You are not allowed to access this course"}
 
         return [lecture.to_dict() for lecture in course.lectures]
 

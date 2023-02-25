@@ -129,7 +129,7 @@ const mapOrder = (order) => {
     course_name: order.course.name,
     student_username: order.student.username,
     created_time: new Date(order.created_time + "Z").toLocaleString(),
-    campus: "monash",
+    campus: order.campus.name,
     payment_status: order.paid ? "Paid" : "Unpaid",
     original_price: "$" + order.original_price,
     data: order,
@@ -212,7 +212,7 @@ const confirmPayment = async () => {
         {{ selectedRow.data.created_time }}
       </n-descriptions-item>
       <n-descriptions-item label="Campus">
-         monash 
+        {{ selectedRow.data.campus.name }}
       </n-descriptions-item>
       <n-descriptions-item label="Course Name">
         {{ selectedRow.data.course.name }}

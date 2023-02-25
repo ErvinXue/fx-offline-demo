@@ -5,9 +5,8 @@ from app.campus.model import Campus
 from app.user.model import Student, Admin, User, Teacher,get_hashed_password
 
 create_app()
-
-# Campus.objects().delete()
-# User.objects().delete()
+Campus.objects().delete()
+User.objects().delete()
 
 c= Campus(name="monash")
 c.save()

@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Layout from "../layout/index.vue";
 import { useAuthStore } from "../stores/auth";
 
 
@@ -10,7 +9,7 @@ const router = createRouter({
       path: '/',
       name: 'layout',
       redirect: "/home",
-      component: () => Layout,
+      component: () => import("../layout/index.vue"),
       children: [
         {
           name: "home",
