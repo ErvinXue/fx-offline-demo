@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  backend:
+    image: fx-backend
+    restart: always
+    build: back_end 
+    env_file: back_end/.env.prod
+    command: gunicorn --worker-class gevent --workers 2 --bind 0.0.0.0:3000 wsgi:app  --log-level debug
+    volumes:
+      - $HOME/.aws/credentials:/root/.aws/credentials:ro
+
+  frontend:
+    image: fx-frontend 
+    restart: always
+    build: front_end
+    
+  
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - frontend
+      - backend
+
+

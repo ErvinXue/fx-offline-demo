@@ -6,7 +6,7 @@ export const getCourse = async (courseId) => {
 };
 
 export const getCourseList = async () => {
-  const response = await axios.get("/courses");
+  const response = await axios.get("/courses/");
   return response.data;
 };
 

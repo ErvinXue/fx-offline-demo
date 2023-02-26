@@ -1,2 +1,0 @@
-# fx-offline-demo
-Web
