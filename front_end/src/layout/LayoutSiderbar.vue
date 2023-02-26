@@ -96,7 +96,7 @@ const menuOptions = renderMenu(menus.value);
     >
       <router-link to="/" custom #="{ navigate, href }">
         <n-a class="logo" :href="href" @click="navigate">
-          <img src="~@/assets/ball.jpg" />
+          <img src="~@/assets/ball.JPG" />
           <span> Fangxue Offline </span>
         </n-a>
       </router-link>
